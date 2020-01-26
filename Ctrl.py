@@ -13,12 +13,12 @@ class Ctrl():
             "date obtained",
             "method of acquisition"
         ]
-        self.database = Database()
+        self.database = Database(self.fieldList)
 
     def add(self):
         newAlbum = []
         for field in self.fieldList:
             msg = f'\tEnter album {field}:\n\t'
             newAlbum.append("test")
-        print(Album(newAlbum).__dict__)
+        # print(Album(newAlbum).__dict__)
         self.database.add(Album(newAlbum))

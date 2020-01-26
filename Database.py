@@ -1,11 +1,25 @@
 import csv
+import os
 
 
 class Database():
 
-    def __init__(self):
+    def __init__(self, fieldList):
+        self.fieldList = fieldList
         self.csvPath = "data/albums.csv"
-        self.albumDB = []
+        self.checkFile()
+
+    def checkFile(self):
+        if os.stat(self.csvPath).st_size != 0:
+            with open(self.csvPath, "r") as readAlbums:
+                reader = csv.reader(readAlbums)
+                topRow = next(reader)
+                if topRow == self.fieldList:
+                    return
+        with open(self.csvPath, "w") as writeAlbum:
+            csv.DictWriter(
+                writeAlbum,
+                self.fieldList).writeheader()
 
     def add(self, album):
         with open(self.csvPath, "a", newline="") as albums:
