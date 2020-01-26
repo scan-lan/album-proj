@@ -19,6 +19,6 @@ class Ctrl():
         newAlbum = []
         for field in self.fieldList:
             msg = f'\tEnter album {field}:\n\t'
-            newAlbum.append(input(msg))
-        print(Album(newAlbum.__dict__))
-        # self.database.add(Album(newAlbum)) ready soon
+            newAlbum.append("test")
+        print(Album(newAlbum).__dict__)
+        self.database.add(Album(newAlbum))
