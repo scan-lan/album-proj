@@ -1,3 +1,3 @@
 from Ctrl import Ctrl
 
-Ctrl().add()
+Ctrl().show()

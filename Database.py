@@ -34,6 +34,6 @@ class Database():
 
     def show(self):
         with open(self.csvPath, "r") as albums:
-            reader = csv.reader(self.csvPath)
+            reader = csv.DictReader(albums)
             for line in reader:
                 print(line)
