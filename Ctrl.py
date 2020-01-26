@@ -21,4 +21,4 @@ class Ctrl():
             msg = f'\tEnter album {field}:\n\t'
             newAlbum.append(input(msg))
         print(Album(newAlbum.__dict__))
-        # self.database.add(Album(newAlbum)) not ready yet
+        # self.database.add(Album(newAlbum)) ready soon
